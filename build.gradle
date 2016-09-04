@@ -1,0 +1,28 @@
+group 'uk.terhoeven.telegram'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'application'
+
+mainClassName = 'uk.terhoeven.telegram.ExampleApp'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.json:json:20160212'
+    compile 'org.apache.httpcomponents:httpclient:4.5.2'
+    compile 'commons-io:commons-io:2.5'
+    compile 'com.google.guava:guava:19.0'
+    compile 'joda-time:joda-time:2.9.4'
+    compile 'io.reactivex:rxjava:1.1.9'
+    compile 'com.google.inject:guice:4.1.0'
+    compile 'com.google.inject.extensions:guice-assistedinject:4.1.0'
+
+    testCompile 'org.mockito:mockito-core:2.0.87-beta'
+    testCompile 'junit:junit:4.12'
+}
