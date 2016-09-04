@@ -39,8 +39,8 @@ public class ExampleApp
 
 		all.subscribe(System.out::println);
 		all.subscribe(message -> sendMessage(bot, message.getChat(), "You wrote: " + message.getText()));
-		all.filter(message -> message.getText().toLowerCase().equals("ping"))
-				.subscribe(message -> sendMessage(bot, message.getChat(), message.getText().replace('i', 'o').replace('I', 'O')));
+		all.filter(message -> message.getText().equalsIgnoreCase("ping") || message.getText().equalsIgnoreCase("pong"))
+				.subscribe(message -> sendMessage(bot, message.getChat(), message.getText().replace('i', 'a').replace('I', 'A').replace('o', 'i').replace('O', 'I').replace('a', 'O').replace('A', 'O')));
 		tobysMessages.subscribe(message -> sendMessage(bot, message.getChat(), "Message from Toby: " + message.getText()));
 	}
 

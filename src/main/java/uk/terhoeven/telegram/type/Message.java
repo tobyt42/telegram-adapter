@@ -7,10 +7,10 @@ public class Message
 	private final int date;
 	private final Chat chat;
 	private final int messageId;
-	private final User from;
+	private final Actor from;
 	private final String text;
 
-	public Message(final int date, final Chat chat, final int messageId, final User from, final String text)
+	public Message(final int date, final Chat chat, final int messageId, final Actor from, final String text)
 	{
 		this.date = date;
 		this.chat = chat;
@@ -40,7 +40,7 @@ public class Message
 		return messageId;
 	}
 
-	public User getSender()
+	public Actor getSender()
 	{
 		return from;
 	}

@@ -16,9 +16,9 @@ import org.json.JSONObject;
 import rx.AsyncEmitter;
 import rx.Observable;
 import uk.terhoeven.telegram.mapper.TypeMapper;
+import uk.terhoeven.telegram.type.Bot;
 import uk.terhoeven.telegram.type.Chat;
 import uk.terhoeven.telegram.type.Message;
-import uk.terhoeven.telegram.type.User;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -103,13 +103,13 @@ public class TelegramBot
 		return null;
 	}
 
-	public User getMe()
+	public Bot getMe()
 	{
 		final JSONObject json = request("getMe");
 		if (json.getBoolean("ok"))
 		{
 			final JSONObject result = json.getJSONObject("result");
-			return new User(result.getInt("id"), result.getString("first_name"), null, result.getString("username"));
+			return new Bot(result.getInt("id"), result.getString("first_name"), result.getString("username"));
 		}
 
 		return null;
